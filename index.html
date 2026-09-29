@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SkillMatch - Find Your Perfect Job</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        Skill<span>Match</span>
+    </div>
+
+    <nav>
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#jobs">
+            Jobs
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a
+            href="javascript:void(0)"
+            onclick="openApplications()"
+        >
+            My Applications
+        </a>
+
+        <button
+            type="button"
+            class="nav-link-button"
+            onclick="openResume()"
+        >
+            My Resume
+        </button>
+
+    </nav>
+
+    <div class="nav-buttons">
+
+        <button
+            class="btn-outline"
+            onclick="openLogin()"
+        >
+            Login
+        </button>
+
+        <button
+            class="btn btn-outline"
+            onclick="logout()"
+        >
+            Logout
+        </button>
+
+        <button
+            class="btn-primary"
+            onclick="openRegister()"
+        >
+            Register
+        </button>
+
+        <button
+            type="button"
+            class="btn-primary"
+            onclick="openPostJob()"
+        >
+            + Post Job
+        </button>
+
+        <button
+            type="button"
+            class="btn-primary"
+            onclick="openMyPostedJobs()"
+        >
+            📋 My Posted Jobs
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section
+    id="home"
+    class="hero"
+>
+
+    <div class="hero-content">
+
+        <p class="hero-tag">
+            🚀 Smart Job Matching Platform
+        </p>
+
+        <h1>
+            Find Jobs That
+            <span>
+                Match Your Skills
+            </span>
+        </h1>
+
+        <p class="hero-description">
+            SkillMatch connects job seekers with
+            the right opportunities based on their
+            skills, experience and interests.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+                class="btn-primary big-btn"
+                onclick="openRegister()"
+            >
+                Get Started
+            </button>
+
+            <button
+                class="btn-outline big-btn"
+                onclick="scrollToJobs()"
+            >
+                Explore Jobs
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FEATURES
+========================================= -->
+
+<section class="features">
+
+    <h2>
+        Why SkillMatch?
+    </h2>
+
+    <p class="section-subtitle">
+        Everything you need to find
+        the right opportunity.
+    </p>
+
+    <div class="feature-container">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🎯
+            </div>
+
+            <h3>
+                Smart Matching
+            </h3>
+
+            <p>
+                Find jobs that match your
+                technical skills.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                💼
+            </div>
+
+            <h3>
+                Latest Jobs
+            </h3>
+
+            <p>
+                Explore internships and jobs
+                from different companies.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ⚡
+            </div>
+
+            <h3>
+                Easy to Apply
+            </h3>
+
+            <p>
+                Discover opportunities and
+                apply quickly.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     JOB SECTION
+========================================= -->
+
+<section
+    id="jobs"
+    class="jobs-section"
+>
+
+    <h2>
+        Featured Jobs
+    </h2>
+
+    <p class="section-subtitle">
+        Discover opportunities
+        matching your skills.
+    </p>
+
+    <div class="job-search-area">
+
+        <input
+            type="text"
+            id="jobSearch"
+            placeholder="Search jobs by title, company or skill..."
+        >
+
+        <button
+            class="btn-primary"
+            onclick="loadJobs()"
+        >
+            Search Jobs
+        </button>
+
+    </div>
+
+    <div
+        id="jobContainer"
+        class="job-container"
+    >
+
+        <p class="job-loading">
+            Loading jobs...
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     ABOUT
+========================================= -->
+
+<section
+    id="about"
+    class="about-section"
+>
+
+    <h2>
+        About SkillMatch
+    </h2>
+
+    <p>
+        SkillMatch is a job portal designed
+        to connect candidates with relevant
+        opportunities using skill-based matching.
+    </p>
+
+</section>
+
+
+<!-- =========================================
+     LOGIN MODAL
+========================================= -->
+
+<div
+    id="loginModal"
+    class="modal"
+>
+
+    <div class="modal-box">
+
+        <span
+            class="close"
+            onclick="closeLogin()"
+        >
+            &times;
+        </span>
+
+        <h2>
+            Welcome Back
+        </h2>
+
+        <p>
+            Login to your SkillMatch account.
+        </p>
+
+        <form id="loginForm">
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Email"
+                required
+            >
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Password"
+                required
+            >
+
+            <button
+                type="submit"
+                class="btn-primary full-btn"
+            >
+                Login
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     REGISTER MODAL
+========================================= -->
+
+<div
+    id="registerModal"
+    class="modal"
+>
+
+    <div class="modal-box">
+
+        <span
+            class="close"
+            onclick="closeRegister()"
+        >
+            &times;
+        </span>
+
+        <h2>
+            Create Account
+        </h2>
+
+        <p>
+            Join SkillMatch today.
+        </p>
+
+        <form id="registerForm">
+
+            <input
+                type="text"
+                id="registerName"
+                placeholder="Full Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="registerEmail"
+                placeholder="Email"
+                required
+            >
+
+            <input
+                type="password"
+                id="registerPassword"
+                placeholder="Password"
+                required
+            >
+
+            <select
+                id="registerRole"
+                required
+            >
+
+                <option value="">
+                    Select Role
+                </option>
+
+                <option value="JOB_SEEKER">
+                    Job Seeker
+                </option>
+
+                <option value="RECRUITER">
+                    Recruiter
+                </option>
+
+            </select>
+
+            <button
+                type="submit"
+                class="btn-primary full-btn"
+            >
+                Create Account
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     JOB DETAILS MODAL
+========================================= -->
+
+<div
+    id="jobDetailsModal"
+    class="modal"
+>
+
+    <div
+        class="modal-box job-details-box"
+    >
+
+        <span
+            class="close"
+            onclick="closeJobDetails()"
+        >
+            &times;
+        </span>
+
+        <div id="jobDetailsContent">
+
+            <p>
+                Loading job details...
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     APPLICATIONS MODAL
+========================================= -->
+
+<div
+    id="applicationsModal"
+    class="modal"
+>
+
+    <div
+        class="modal-box applications-box"
+    >
+
+        <span
+            class="close"
+            onclick="closeApplications()"
+        >
+            &times;
+        </span>
+
+        <div class="applications-header">
+
+            <div>
+
+                <h2>
+                    My Applications
+                </h2>
+
+                <p>
+                    Track the jobs you have applied for.
+                </p>
+
+            </div>
+
+            <button
+                class="btn-outline"
+                onclick="loadMyApplications()"
+            >
+                🔄 Refresh
+            </button>
+
+        </div>
+
+        <div
+            id="applicationsContainer"
+            class="applications-container"
+        >
+
+            <p class="job-loading">
+                Loading applications...
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     RESUME MODAL
+========================================= -->
+
+<div
+    id="resumeModal"
+    class="modal"
+>
+
+    <div class="modal-box">
+
+        <span
+            class="close"
+            onclick="closeResume()"
+        >
+            &times;
+        </span>
+
+        <h2>
+            My Resume
+        </h2>
+
+        <p>
+            Upload your PDF resume to extract skills
+            and match them with jobs.
+        </p>
+
+        <form id="resumeForm">
+
+            <input
+                type="file"
+                id="resumeFile"
+                accept=".pdf,application/pdf"
+                required
+            >
+
+            <button
+                type="submit"
+                class="btn-primary full-btn"
+            >
+                📄 Upload Resume
+            </button>
+
+        </form>
+
+        <div
+            id="resumeResult"
+            style="margin-top:20px;"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     POST JOB MODAL
+========================================= -->
+
+<div
+    id="postJobModal"
+    class="modal"
+>
+
+    <div class="modal-box">
+
+        <span
+            class="close"
+            onclick="closePostJob()"
+        >
+            &times;
+        </span>
+
+        <h2>
+            Post a New Job
+        </h2>
+
+        <p>
+            Create a new job opportunity for candidates.
+        </p>
+
+        <form id="postJobForm">
+
+            <input
+                type="text"
+                id="jobTitle"
+                placeholder="Job Title"
+                required
+            >
+
+            <input
+                type="text"
+                id="jobCompany"
+                placeholder="Company"
+                required
+            >
+
+            <input
+                type="text"
+                id="jobLocation"
+                placeholder="Location"
+                required
+            >
+
+            <input
+                type="number"
+                id="jobSalary"
+                placeholder="Salary"
+                required
+            >
+
+            <input
+                type="text"
+                id="jobSkills"
+                placeholder="Required Skills (Java, Spring Boot, MySQL)"
+                required
+            >
+
+            <textarea
+                id="jobDescription"
+                placeholder="Job Description"
+                rows="5"
+                required
+            ></textarea>
+
+            <button
+                type="submit"
+                class="btn-primary full-btn"
+            >
+                🚀 Post Job
+            </button>
+
+        </form>
+
+        <div
+            id="postJobResult"
+            style="margin-top:15px;"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     MY POSTED JOBS MODAL
+========================================= -->
+
+<div
+    id="myPostedJobsModal"
+    class="modal"
+>
+
+    <div
+        class="modal-box my-posted-jobs-box"
+    >
+
+        <span
+            class="close"
+            onclick="closeMyPostedJobs()"
+        >
+            &times;
+        </span>
+
+        <h2>
+            My Posted Jobs
+        </h2>
+
+        <p>
+            Manage the jobs posted by your company.
+        </p>
+
+        <div
+            id="myPostedJobsContainer"
+            class="my-posted-jobs-container"
+        >
+
+            <p>
+                Loading jobs...
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     EDIT JOB MODAL
+========================================= -->
+
+<div
+    id="editJobModal"
+    class="modal"
+>
+
+    <div class="modal-box">
+
+        <span
+            class="close"
+            onclick="closeEditJob()"
+        >
+            &times;
+        </span>
+
+        <h2>
+            Edit Job
+        </h2>
+
+        <p>
+            Update your job information.
+        </p>
+
+        <form id="editJobForm">
+
+            <input
+                type="hidden"
+                id="editJobId"
+            >
+
+            <input
+                type="text"
+                id="editJobTitle"
+                placeholder="Job Title"
+                required
+            >
+
+            <input
+                type="text"
+                id="editJobCompany"
+                placeholder="Company"
+                required
+            >
+
+            <input
+                type="text"
+                id="editJobLocation"
+                placeholder="Location"
+                required
+            >
+
+            <input
+                type="number"
+                id="editJobSalary"
+                placeholder="Salary"
+                required
+            >
+
+            <input
+                type="text"
+                id="editJobSkills"
+                placeholder="Required Skills"
+                required
+            >
+
+            <textarea
+                id="editJobDescription"
+                placeholder="Job Description"
+                rows="5"
+                required
+            ></textarea>
+
+            <button
+                type="submit"
+                class="btn-primary full-btn"
+            >
+                💾 Update Job
+            </button>
+
+        </form>
+
+        <div
+            id="editJobResult"
+            style="margin-top:15px;"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <p>
+        © 2026 SkillMatch. All rights reserved.
+    </p>
+
+</footer>
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
