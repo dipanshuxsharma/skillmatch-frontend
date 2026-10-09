@@ -52,7 +52,7 @@ async function handleLogin(event) {
     try {
 
         const response = await fetch(
-            "http://https://skillmatch-job-portal-backend-1.onrender.com/api/auth/login",
+            "https://skillmatch-job-portal-backend-1.onrender.com/api/auth/login",
             {
                 method: "POST",
 
@@ -167,7 +167,7 @@ async function handleRegister(event) {
     try {
 
         const response = await fetch(
-            "http://https://skillmatch-job-portal-backend-1.onrender.com/api/auth/register",
+            "https://skillmatch-job-portal-backend-1.onrender.com/api/auth/register",
             {
                 method: "POST",
 
@@ -314,7 +314,7 @@ async function handleResumeUpload(event) {
     try {
 
         const response = await fetch(
-            "http://https://skillmatch-job-portal-backend-1.onrender.com/api/resumes/process",
+            "https://skillmatch-job-portal-backend-1.onrender.com/api/resumes/process",
             {
                 method: "POST",
 
@@ -481,7 +481,7 @@ async function loadMyApplications() {
     try {
 
         const response = await fetch(
-            "http://https://skillmatch-job-portal-backend-1.onrender.com/api/applications/my",
+            "https://skillmatch-job-portal-backend-1.onrender.com/api/applications/my",
             {
                 method: "GET",
 
@@ -677,7 +677,7 @@ async function loadJobs() {
         }
 
         const response = await fetch(
-            "http://https://skillmatch-job-portal-backend-1.onrender.com/api/jobs",
+             "https://skillmatch-job-portal-backend-1.onrender.com/api/jobs",
             {
                 method: "GET",
                 headers: headers
@@ -925,7 +925,7 @@ async function viewJob(jobId) {
         }
 
         const response = await fetch(
-            "http://https://skillmatch-job-portal-backend-1.onrender.com/api/jobs/" + jobId,
+             "https://skillmatch-job-portal-backend-1.onrender.com/api/jobs/" + jobId,
             {
                 method: "GET",
                 headers: headers
@@ -1155,7 +1155,7 @@ async function applyForJob(jobId) {
     try {
 
         const response = await fetch(
-            "http://https://skillmatch-job-portal-backend-1.onrender.com/api/applications/apply/" +
+            "https://skillmatch-job-portal-backend-1.onrender.com/api/applications/apply/" +
             jobId,
             {
                 method: "POST",
@@ -1282,7 +1282,7 @@ async function matchResumeWithJob(jobId) {
     try {
 
         const response = await fetch(
-            "http://https://skillmatch-job-portal-backend-1.onrender.com/api/match/" +
+             "https://skillmatch-job-portal-backend-1.onrender.com/api/match/" +
             jobId,
             {
                 method: "GET",
@@ -1520,7 +1520,7 @@ async function handlePostJob(event) {
     try {
 
         const response = await fetch(
-            "http://https://skillmatch-job-portal-backend-1.onrender.com/api/jobs",
+             "https://skillmatch-job-portal-backend-1.onrender.com/api/jobs",
             {
                 method: "POST",
 
@@ -1670,7 +1670,7 @@ async function loadMyPostedJobs() {
     try {
 
         const response = await fetch(
-            "http://https://skillmatch-job-portal-backend-1.onrender.com/api/jobs",
+            "https://skillmatch-job-portal-backend-1.onrender.com/api/jobs",
             {
                 method: "GET",
 
@@ -1853,7 +1853,7 @@ async function deleteJob(jobId) {
     try {
 
         const response = await fetch(
-            "http://https://skillmatch-job-portal-backend-1.onrender.com/api/jobs/" +
+            "https://skillmatch-job-portal-backend-1.onrender.com/api/jobs/" +
             jobId,
             {
                 method: "DELETE",
@@ -1950,7 +1950,7 @@ async function openEditJob(jobId) {
     try {
 
         const response = await fetch(
-            "http://https://skillmatch-job-portal-backend-1.onrender.com/api/jobs/" +
+             "https://skillmatch-job-portal-backend-1.onrender.com/api/jobs/" +
             jobId,
             {
                 method: "GET",
@@ -2112,7 +2112,7 @@ async function handleEditJob(event) {
     try {
 
         const response = await fetch(
-            "http://https://skillmatch-job-portal-backend-1.onrender.com/api/jobs/" +
+            "https://skillmatch-job-portal-backend-1.onrender.com/api/jobs/" +
             jobId,
             {
                 method: "PUT",
